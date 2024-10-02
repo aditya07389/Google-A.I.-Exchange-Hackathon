@@ -118,6 +118,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+import os
+
+STATIC_URL = '/static/'
+
+# List all additional static file directories here
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'modelapp', 'static'),  # This points to modelapp/static
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Where collectstatic will gather files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
